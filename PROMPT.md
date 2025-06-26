@@ -42,7 +42,9 @@ rocket-xp-frontend/
 │   │   │           └── route.ts
 │   │   ├── globals.css               # Global styles and Tailwind imports
 │   │   ├── layout.tsx                # Root layout component
-│   │   └── page.tsx                  # Home page component
+│   │   ├── page.tsx                  # Home page component
+│   │   └── login/
+│   │       └── page.tsx
 │   ├── components/                   # Reusable UI components (shadcn/ui)
 │   │   └── ui/                       # shadcn/ui component library
 │   └── lib/                          # Utility functions and configurations

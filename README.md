@@ -20,7 +20,9 @@ rocket-xp-frontend/
 │   ├── app/                 # Next.js App Router
 │   │   ├── globals.css      # Global styles
 │   │   ├── layout.tsx       # Root layout
-│   │   └── page.tsx         # Home page
+│   │   ├── page.tsx         # Home page
+│   │   └── login/
+│   │       └── page.tsx     # Login page
 │   └── lib/
 │       └── utils.ts         # Utility functions
 ├── public/                  # Static assets
