@@ -45,71 +45,77 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --background: #fff;
+  --foreground: #524389;
+  --card: #fff;
+  --card-foreground: #524389;
+  --popover: #fff;
+  --popover-foreground: #524389;
+  --primary: #524389;
+  --primary-foreground: #fff;
+  --primary-alt: #D63AA2;
+  --secondary: #C6639D;
+  --secondary-foreground: #fff;
+  --secondary-alt: #4891C6;
+  --muted: #C6639D22;
+  --muted-foreground: #524389;
+  --accent: #FFB519;
+  --accent-foreground: #fff;
+  --destructive: #D63AA2;
+  --border: #382E5E;
+  --input: #52438922;
+  --ring: #D63AA2;
+  --gradient: linear-gradient(90deg, #524389 0%, #D63AA2 100%);
+  --sidebar: #524389;
+  --sidebar-foreground: #fff;
+  --sidebar-primary: #524389;
+  --sidebar-primary-foreground: #fff;
+  --sidebar-accent: #D63AA2;
+  --sidebar-accent-foreground: #fff;
+  --sidebar-border: #382E5E;
+  --sidebar-ring: #D63AA2;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --background: #382E5E;
+  --foreground: #fff;
+  --card: #524389;
+  --card-foreground: #fff;
+  --popover: #524389;
+  --popover-foreground: #fff;
+  --primary: #D63AA2;
+  --primary-foreground: #fff;
+  --primary-alt: #524389;
+  --secondary: #4891C6;
+  --secondary-foreground: #fff;
+  --secondary-alt: #C6639D;
+  --muted: #52438944;
+  --muted-foreground: #fff;
+  --accent: #FFB519;
+  --accent-foreground: #524389;
+  --destructive: #D63AA2;
+  --border: #fff2;
+  --input: #fff3;
+  --ring: #D63AA2;
+  --gradient: linear-gradient(90deg, #524389 0%, #D63AA2 100%);
+  --sidebar: #382E5E;
+  --sidebar-foreground: #fff;
+  --sidebar-primary: #382E5E;
+  --sidebar-primary-foreground: #fff;
+  --sidebar-accent: #D63AA2;
+  --sidebar-accent-foreground: #fff;
+  --sidebar-border: #524389;
+  --sidebar-ring: #D63AA2;
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
 }
 
 @layer base {
@@ -119,4 +125,12 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #524389 0%, #D63AA2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
