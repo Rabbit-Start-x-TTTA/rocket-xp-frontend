@@ -16,7 +16,7 @@ export default function Product({
 }) {
   return (
     <li className="border border-gray-300 rounded-md overflow-hidden transition-all duration-300 hover:border-[#D63AA2] hover:shadow-lg hover:-translate-y-1 cursor-pointer">
-      <Link href={`/productDetail/${slug || id}`}>
+      <Link href={`/product-catalog/${slug || id}`}>
         <div className="relative min-w-[175px] h-[150px] bg-gray-200">
           <Image src={img_path} alt={name} fill className="object-cover" />
         </div>
