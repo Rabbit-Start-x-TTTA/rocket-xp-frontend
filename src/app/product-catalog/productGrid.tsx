@@ -1,6 +1,13 @@
 import Product from "./product";
 
-const data: any[] = [
+type Product = {
+  id: number;
+  name: string;
+  price: number;
+  img_path: string;
+};
+
+const data: Product[] = [
   {
     id: 1,
     name: "Product 1",
