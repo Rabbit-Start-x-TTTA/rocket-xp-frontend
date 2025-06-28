@@ -5,13 +5,13 @@ export default function Product({
   name = "Product Name",
   price = 0,
   img_path = "/book.jpg",
-  id = "1", // Add id prop for routing
+  id = 1, // Add id prop for routing
   slug, // Optional: use slug instead of id
 }: {
   name?: string;
   price?: number;
   img_path?: string;
-  id?: string;
+  id?: number;
   slug?: string;
 }) {
   return (
