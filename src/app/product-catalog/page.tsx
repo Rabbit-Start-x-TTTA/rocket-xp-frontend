@@ -1,6 +1,6 @@
-import FilterSection from "./filterSection";
-import ProductGrid from "./productGrid";
-import SearchSection from "./searchSection";
+import FilterSection from "../../components/product-catalog/filterSection";
+import ProductGrid from "../../components/product-catalog/productGrid";
+import SearchSection from "../../components/product-catalog/searchSection";
 
 export default function ProductCatalogPage() {
   return (

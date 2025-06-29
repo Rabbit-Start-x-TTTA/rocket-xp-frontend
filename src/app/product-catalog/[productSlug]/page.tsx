@@ -1,12 +1,12 @@
 import data from "../dummyData";
 import Image from "next/image";
 
-export default function ProductDetailPage({
-  params: { productSlug },
+export default async function ProductDetailPage({
+  params,
 }: {
   params: { productSlug: string };
 }) {
-  const product_data = data.find((p) => p.id.toString() === productSlug);
+  const product_data = data.find((p) => p.id.toString() === params.productSlug);
 
   if (!product_data) {
     return <div>Product not found</div>;

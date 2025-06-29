@@ -1,5 +1,5 @@
 import Product from "./product";
-import data from "./dummyData";
+import data from "../../app/product-catalog/dummyData";
 
 export default function ProductGrid() {
   return (
