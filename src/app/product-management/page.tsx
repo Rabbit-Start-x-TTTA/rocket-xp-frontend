@@ -1,4 +1,5 @@
 import { Edit, Trash2, Plus, Filter } from "lucide-react";
+import Link from "next/link";
 
 export default function ProductManagementPage() {
   const products = [
@@ -71,7 +72,7 @@ export default function ProductManagementPage() {
           <div className="flex gap-4 mb-6">
             <button className="bg-purple-400 hover:bg-purple-500 text-white px-6 py-2 rounded-md font-medium transition-colors flex items-center gap-2">
               <Plus size={16} />
-              ADD
+              <Link href="/product-management/create">ADD</Link>
             </button>
             <button className="bg-purple-400 hover:bg-purple-500 text-white px-6 py-2 rounded-md font-medium transition-colors">
               EXPORT
