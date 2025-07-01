@@ -25,7 +25,6 @@ export default function FilterSection() {
         <label
           htmlFor="sort"
           className="flex items-center gap-2 text-sm font-medium"
-          style={{ color: "#524389" }}
         >
           <ArrowUpDown size={16} />
           Sort by
