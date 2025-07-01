@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ViewProductPage({
   params,
 }: {
@@ -22,7 +24,7 @@ export default function ViewProductPage({
           </div>
           <div className="flex gap-2">
             <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md font-medium transition-colors">
-              Edit
+              <Link href={`/product-management/${productSlug}/edit`}>Edit</Link>
             </button>
             <button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md font-medium transition-colors">
               DELETE

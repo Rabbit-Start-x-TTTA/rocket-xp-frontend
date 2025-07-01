@@ -1,10 +1,4 @@
-export default function ViewProductPage({
-  params,
-}: {
-  params: { productSlug: string };
-}) {
-  const productSlug = params.productSlug;
-
+export default function CreateProductPage() {
   return (
     <div className="flex min-h-screen bg-gray-50">
       {/* Side Navbar */}
@@ -14,32 +8,20 @@ export default function ViewProductPage({
 
       {/* Main Content */}
       <main className="flex-1 p-6">
-        {/* Page Header */}
-        <div className="flex justify-between items-center mb-8">
-          <div>
-            <div className="text-sm text-gray-500 mb-1">BACK</div>
-            <h1 className="text-3xl font-bold text-gray-800">{productSlug}</h1>
-          </div>
-          <div className="flex gap-2">
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md font-medium transition-colors">
-              EDIT
-            </button>
-            <button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md font-medium transition-colors">
-              DELETE
-            </button>
-          </div>
-        </div>
+        <h1 className="text-3xl font-bold text-gray-800 mb-8">EDIT Product</h1>
 
-        <div className="max-w-4xl">
+        <div className="max-w-2xl">
           <div className="space-y-6">
             {/* Product Name */}
             <div>
               <div className="block text-sm font-medium text-gray-700 mb-2">
                 Product Name
               </div>
-              <div className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700">
-                How to swim
-              </div>
+              <input
+                type="text"
+                defaultValue="How to swim"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
             </div>
 
             {/* Description */}
@@ -47,9 +29,11 @@ export default function ViewProductPage({
               <div className="block text-sm font-medium text-gray-700 mb-2">
                 Description
               </div>
-              <div className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700 min-h-[80px]">
-                Lorem bla bla bla dadadadadsda
-              </div>
+              <textarea
+                defaultValue="Lorem bla bla bla dadadadadsda"
+                rows={3}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
+              />
             </div>
 
             {/* Type and Category */}
@@ -58,17 +42,20 @@ export default function ViewProductPage({
                 <div className="block text-sm font-medium text-gray-700 mb-2">
                   Type
                 </div>
-                <div className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700">
-                  Digital
-                </div>
+                <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white">
+                  <option>Digital</option>
+                  <option>Physical</option>
+                </select>
               </div>
               <div>
                 <div className="block text-sm font-medium text-gray-700 mb-2">
                   Category
                 </div>
-                <div className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700">
-                  ebook
-                </div>
+                <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white">
+                  <option>ebook</option>
+                  <option>Course</option>
+                  <option>Software</option>
+                </select>
               </div>
             </div>
 
@@ -78,15 +65,21 @@ export default function ViewProductPage({
                 <div className="block text-sm font-medium text-gray-700 mb-2">
                   Price
                 </div>
-                <div className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700">
-                  10
-                </div>
+                <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white">
+                  <option>10</option>
+                  <option>20</option>
+                  <option>50</option>
+                  <option>100</option>
+                </select>
               </div>
               <div>
                 <div className="block text-sm font-medium text-gray-700 mb-2">
                   Amount
                 </div>
-                <div className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700"></div>
+                <input
+                  type="text"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                />
               </div>
             </div>
 
@@ -95,9 +88,11 @@ export default function ViewProductPage({
               <div className="block text-sm font-medium text-gray-700 mb-2">
                 Access Key
               </div>
-              <div className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700">
-                how-to-swim-...
-              </div>
+              <input
+                type="text"
+                defaultValue="how-to-swim-..."
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
             </div>
 
             {/* Product Image */}
@@ -105,9 +100,11 @@ export default function ViewProductPage({
               <div className="block text-sm font-medium text-gray-700 mb-2">
                 Product Image
               </div>
-              <div className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700">
-                image/event-img.jpg
-              </div>
+              <input
+                type="text"
+                defaultValue="image/event-img.jpg"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
             </div>
 
             {/* All Discounts */}
@@ -115,9 +112,11 @@ export default function ViewProductPage({
               <div className="block text-sm font-medium text-gray-700 mb-2">
                 All Discounts
               </div>
-              <div className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700">
-                FREE, FREE100, SIGMA25, CHAD
-              </div>
+              <input
+                type="text"
+                defaultValue="FREE, FREE100, SIGMA25, CHAD"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
             </div>
 
             {/* XP Reward */}
@@ -125,9 +124,13 @@ export default function ViewProductPage({
               <div className="block text-sm font-medium text-gray-700 mb-2">
                 XP Reward
               </div>
-              <div className="w-32 px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700">
-                10
-              </div>
+              <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white">
+                <option>10</option>
+                <option>20</option>
+                <option>30</option>
+                <option>50</option>
+                <option>100</option>
+              </select>
             </div>
 
             {/* Status */}
@@ -135,9 +138,21 @@ export default function ViewProductPage({
               <div className="block text-sm font-medium text-gray-700 mb-2">
                 Status
               </div>
-              <div className="w-32 px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700">
-                Hide
-              </div>
+              <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white">
+                <option>Hide</option>
+                <option>Active</option>
+                <option>Draft</option>
+              </select>
+            </div>
+
+            {/* ADD Button */}
+            <div className="pt-4">
+              <button
+                type="button"
+                className="bg-purple-400 hover:bg-purple-500 text-white px-8 py-2 rounded-md font-medium transition-colors"
+              >
+                EDIT
+              </button>
             </div>
           </div>
         </div>
