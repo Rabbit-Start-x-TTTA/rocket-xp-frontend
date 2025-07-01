@@ -7,9 +7,8 @@ export default function FilterSection() {
         <label
           htmlFor="filter"
           className="flex items-center gap-2 text-sm font-medium"
-          style={{ color: "#524389" }}
         >
-          <Filter size={16} style={{ color: "#D63AA2" }} />
+          <Filter size={16} />
           Filter
         </label>
         <select
@@ -28,7 +27,7 @@ export default function FilterSection() {
           className="flex items-center gap-2 text-sm font-medium"
           style={{ color: "#524389" }}
         >
-          <ArrowUpDown size={16} style={{ color: "#D63AA2" }} />
+          <ArrowUpDown size={16} />
           Sort by
         </label>
         <select
