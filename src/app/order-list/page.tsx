@@ -1,4 +1,31 @@
 export default function OrderListPage() {
+  const dummyOrders = [
+    {
+      id: 1,
+      user: "Alice",
+      product: "AxiU",
+      type: "swap",
+      category: "ebook",
+      price: "100",
+      discount: "FREE100",
+      amount: "1 / AXI-1234",
+      ship: "Yes",
+      status: "done",
+    },
+    {
+      id: 2,
+      user: "Bob",
+      product: "SigmaX",
+      type: "purchase",
+      category: "software",
+      price: "200",
+      discount: "-",
+      amount: "1 / SIG-KEY",
+      ship: "No",
+      status: "undone",
+    },
+  ];
+
   return (
     <div className="flex min-h-screen bg-gray-50">
       {/* Side Navbar */}
@@ -59,34 +86,59 @@ export default function OrderListPage() {
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-gray-200 hover:bg-gray-50">
-                  <td className="px-4 py-3 text-sm text-gray-700">Alice</td>
-                  <td className="px-4 py-3 text-sm text-gray-700">AxiU</td>
-                  <td className="px-4 py-3 text-sm text-gray-700">swap</td>
-                  <td className="px-4 py-3 text-sm text-gray-700">-</td>
-                  <td className="px-4 py-3 text-sm text-gray-700">-</td>
-                  <td className="px-4 py-3 text-sm text-gray-700">-</td>
-                  <td className="px-4 py-3 text-sm text-gray-700">-</td>
-                  <td className="px-4 py-3 text-sm text-gray-700">-</td>
-                  <td className="px-4 py-3">
-                    <div className="flex gap-1">
-                      <span className="bg-green-500 text-white px-2 py-1 rounded text-xs font-medium">
-                        DONE
+                {dummyOrders.map((order) => (
+                  <tr
+                    key={order.id}
+                    className="border-b border-gray-200 hover:bg-gray-50"
+                  >
+                    <td className="px-4 py-3 text-sm text-gray-700">
+                      {order.user}
+                    </td>
+                    <td className="px-4 py-3 text-sm text-gray-700">
+                      {order.product}
+                    </td>
+                    <td className="px-4 py-3 text-sm text-gray-700">
+                      {order.type}
+                    </td>
+                    <td className="px-4 py-3 text-sm text-gray-700">
+                      {order.category}
+                    </td>
+                    <td className="px-4 py-3 text-sm text-gray-700">
+                      {order.price}
+                    </td>
+                    <td className="px-4 py-3 text-sm text-gray-700">
+                      {order.discount}
+                    </td>
+                    <td className="px-4 py-3 text-sm text-gray-700">
+                      {order.amount}
+                    </td>
+                    <td className="px-4 py-3 text-sm text-gray-700">
+                      {order.ship}
+                    </td>
+                    <td className="px-4 py-3">
+                      <span
+                        className={`px-2 py-1 rounded text-xs font-medium ${
+                          order.status === "done"
+                            ? "bg-green-500 text-white"
+                            : "bg-yellow-500 text-white"
+                        }`}
+                      >
+                        {order.status.toUpperCase()}
                       </span>
-                      <span className="bg-yellow-500 text-white px-2 py-1 rounded text-xs font-medium">
-                        SH
-                      </span>
-                      <span className="bg-red-500 text-white px-2 py-1 rounded text-xs font-medium">
-                        CANCEL
-                      </span>
-                    </div>
-                  </td>
-                  <td className="px-4 py-3">
-                    <button className="text-purple-600 hover:text-purple-800 font-medium text-sm">
-                      View
-                    </button>
-                  </td>
-                </tr>
+                    </td>
+                    <td className="px-4 py-3 space-x-2">
+                      <button className="text-blue-600 hover:text-blue-800 font-medium text-sm">
+                        Edit
+                      </button>
+                      <button className="text-red-600 hover:text-red-800 font-medium text-sm">
+                        Delete
+                      </button>
+                      <button className="text-purple-600 hover:text-purple-800 font-medium text-sm">
+                        View
+                      </button>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
