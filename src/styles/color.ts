@@ -10,7 +10,8 @@ const colors = {
     darkPurple: "#382E5E"
   },
   white: "#FFFFFF",
-  black: "#000000"
+  black: "#000000",
+  grey: "#808080"
 }
 
 export default colors
