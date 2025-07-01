@@ -1,4 +1,10 @@
-export default function EditEventPage() {
+export default function ViewProductPage({
+  params,
+}: {
+  params: { productSlug: string };
+}) {
+  const productSlug = params.productSlug;
+
   return (
     <div className="flex min-h-screen bg-gray-50">
       {/* Side Navbar */}
@@ -8,20 +14,32 @@ export default function EditEventPage() {
 
       {/* Main Content */}
       <main className="flex-1 p-6">
-        <h1 className="text-3xl font-bold text-gray-800 mb-8">Create Event</h1>
+        {/* Page Header */}
+        <div className="flex justify-between items-center mb-8">
+          <div>
+            <div className="text-sm text-gray-500 mb-1">BACK</div>
+            <h1 className="text-3xl font-bold text-gray-800">{productSlug}</h1>
+          </div>
+          <div className="flex gap-2">
+            <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md font-medium transition-colors">
+              EDIT
+            </button>
+            <button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md font-medium transition-colors">
+              DELETE
+            </button>
+          </div>
+        </div>
 
-        <div className="max-w-2xl">
+        <div className="max-w-4xl">
           <div className="space-y-6">
-            {/* Event Name */}
+            {/* Product Name */}
             <div>
               <div className="block text-sm font-medium text-gray-700 mb-2">
-                Event Name
+                Product Name
               </div>
-              <input
-                type="text"
-                defaultValue="Hello World"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-              />
+              <div className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700">
+                How to swim
+              </div>
             </div>
 
             {/* Description */}
@@ -29,95 +47,77 @@ export default function EditEventPage() {
               <div className="block text-sm font-medium text-gray-700 mb-2">
                 Description
               </div>
-              <textarea
-                defaultValue="Lorem bla bla bla dasdsdasdsda"
-                rows={3}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
-              />
+              <div className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700 min-h-[80px]">
+                Lorem bla bla bla dadadadadsda
+              </div>
             </div>
 
-            {/* Date and Time */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Type and Category */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <div className="block text-sm font-medium text-gray-700 mb-2">
-                  Date
+                  Type
                 </div>
-                <input
-                  type="text"
-                  defaultValue="10/06/2568"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                />
+                <div className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700">
+                  Digital
+                </div>
               </div>
               <div>
                 <div className="block text-sm font-medium text-gray-700 mb-2">
-                  Time
+                  Category
                 </div>
-                <div className="flex gap-2">
-                  <select className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white">
-                    <option>08:00</option>
-                    <option>09:00</option>
-                    <option>10:00</option>
-                    <option>11:00</option>
-                  </select>
-                  <span className="flex items-center text-gray-500">-</span>
-                  <select className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white">
-                    <option>16:00</option>
-                    <option>17:00</option>
-                    <option>18:00</option>
-                    <option>19:00</option>
-                  </select>
+                <div className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700">
+                  ebook
                 </div>
               </div>
             </div>
 
-            {/* Event Format */}
-            <div>
-              <div className="block text-sm font-medium text-gray-700 mb-2">
-                Event Format
+            {/* Price and Amount */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <div className="block text-sm font-medium text-gray-700 mb-2">
+                  Price
+                </div>
+                <div className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700">
+                  10
+                </div>
               </div>
-              <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white">
-                <option>Online</option>
-                <option>Offline</option>
-                <option>Hybrid</option>
-              </select>
+              <div>
+                <div className="block text-sm font-medium text-gray-700 mb-2">
+                  Amount
+                </div>
+                <div className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700"></div>
+              </div>
             </div>
 
-            {/* Location */}
+            {/* Access Key */}
             <div>
               <div className="block text-sm font-medium text-gray-700 mb-2">
-                Location
+                Access Key
               </div>
-              <input
-                type="text"
-                defaultValue="At Home"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-              />
+              <div className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700">
+                how-to-swim-...
+              </div>
             </div>
 
-            {/* Event Image */}
+            {/* Product Image */}
             <div>
               <div className="block text-sm font-medium text-gray-700 mb-2">
-                Event Image
+                Product Image
               </div>
-              <input
-                type="text"
-                defaultValue="image/event-img.jpg"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-              />
+              <div className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700">
+                image/event-img.jpg
+              </div>
             </div>
 
-            {/* Max Participant */}
+            {/* All Discounts */}
             <div>
               <div className="block text-sm font-medium text-gray-700 mb-2">
-                Max Participant
+                All Discounts
               </div>
-              <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white">
-                <option>138</option>
-                <option>50</option>
-                <option>100</option>
-                <option>200</option>
-                <option>500</option>
-              </select>
+              <div className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700">
+                FREE, FREE100, SIGMA25, CHAD
+              </div>
             </div>
 
             {/* XP Reward */}
@@ -125,13 +125,9 @@ export default function EditEventPage() {
               <div className="block text-sm font-medium text-gray-700 mb-2">
                 XP Reward
               </div>
-              <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white">
-                <option>10</option>
-                <option>20</option>
-                <option>30</option>
-                <option>50</option>
-                <option>100</option>
-              </select>
+              <div className="w-32 px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700">
+                10
+              </div>
             </div>
 
             {/* Status */}
@@ -139,22 +135,9 @@ export default function EditEventPage() {
               <div className="block text-sm font-medium text-gray-700 mb-2">
                 Status
               </div>
-              <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white">
-                <option>Draft</option>
-                <option>Active</option>
-                <option>Upcoming</option>
-                <option>Completed</option>
-              </select>
-            </div>
-
-            {/* ADD Button */}
-            <div className="pt-4">
-              <button
-                type="button"
-                className="bg-purple-400 hover:bg-purple-500 text-white px-8 py-2 rounded-md font-medium transition-colors"
-              >
-                ADD
-              </button>
+              <div className="w-32 px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-700">
+                Hide
+              </div>
             </div>
           </div>
         </div>
