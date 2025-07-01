@@ -1,4 +1,4 @@
-export default function CreateEventPage() {
+export default function EditEventPage() {
   return (
     <div className="flex min-h-screen bg-gray-50">
       {/* Side Navbar */}
