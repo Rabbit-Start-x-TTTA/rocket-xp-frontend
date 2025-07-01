@@ -19,13 +19,17 @@ export default function ViewProductPage({
         {/* Page Header */}
         <div className="flex justify-between items-center mb-8">
           <div>
-            <div className="text-sm text-gray-500 mb-1">BACK</div>
+            <Link href="/product-management">
+              <div className="text-sm text-gray-500 mb-1">BACK</div>
+            </Link>
             <h1 className="text-3xl font-bold text-gray-800">{productSlug}</h1>
           </div>
           <div className="flex gap-2">
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md font-medium transition-colors">
-              <Link href={`/product-management/${productSlug}/edit`}>Edit</Link>
-            </button>
+            <Link href={`/product-management/${productSlug}/edit`}>
+              <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md font-medium transition-colors">
+                Edit
+              </button>
+            </Link>
             <button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md font-medium transition-colors">
               DELETE
             </button>

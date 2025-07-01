@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function CreateProductPage() {
   return (
     <div className="flex min-h-screen bg-gray-50">
@@ -8,6 +10,9 @@ export default function CreateProductPage() {
 
       {/* Main Content */}
       <main className="flex-1 p-6">
+        <Link href="/product-management">
+          <div className="text-sm text-gray-500 mb-1">BACK</div>
+        </Link>
         <h1 className="text-3xl font-bold text-gray-800 mb-8">
           Create Product
         </h1>
