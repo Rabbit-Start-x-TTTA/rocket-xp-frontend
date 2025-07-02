@@ -3,7 +3,7 @@ import { StepBack } from "lucide-react";
 export default function PurchaseProductPage() {
   return (
     <main className="min-h-screen p-4 text-black max-w-2xs mx-auto">
-      <p className="pb-6 flex text-[#D63AA2]">
+      <p className="pb-6 flex text-[var(--primary-alt)]">
         <StepBack />
       </p>
       <h1 className="font-bold text-2xl">สินค้าในตะกร้า</h1>
@@ -24,13 +24,15 @@ export default function PurchaseProductPage() {
       </ul>
       <div className="flex justify-between items-center">
         <p>Discount</p>
-        <p className="bg-[#D63AA2] text-black p-2 rounded-xl">TICKET</p>
+        <p className="bg-[var(--primary-alt)] text-black p-2 rounded-xl">
+          TICKET
+        </p>
       </div>
       <div className="flex justify-between font-bold text-xl mt-4">
         <p>Total</p>
         <p>297$</p>
       </div>
-      <button className="w-full bg-[#D63AA2] text-black p-2 mt-4 hover:bg-[#C6639D] transition-colors rounded-xl">
+      <button className="w-full bg-[var(--primary-alt)] text-black p-2 mt-4 hover:bg-[var(--secondary)] transition-colors rounded-xl">
         ชำระเงิน
       </button>
     </main>
