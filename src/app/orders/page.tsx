@@ -1,31 +1,6 @@
-export default function OrderListPage() {
-  const dummyOrders = [
-    {
-      id: 1,
-      user: "Alice",
-      product: "AxiU",
-      type: "swap",
-      category: "ebook",
-      price: "100",
-      discount: "FREE100",
-      amount: "1 / AXI-1234",
-      ship: "Yes",
-      status: "done",
-    },
-    {
-      id: 2,
-      user: "Bob",
-      product: "SigmaX",
-      type: "purchase",
-      category: "software",
-      price: "200",
-      discount: "-",
-      amount: "1 / SIG-KEY",
-      ship: "No",
-      status: "undone",
-    },
-  ];
+import dummyOrders from "./dummyData";
 
+export default function OrderListPage() {
   return (
     <div className="flex min-h-screen bg-gray-50">
       {/* Side Navbar */}
