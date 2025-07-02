@@ -26,7 +26,7 @@ export default function InterestTagList({ category }: { category: string }) {
     );
   };
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap justify-center gap-3 ">
       {interests.map((interest) => (
         <Tag
           key={interest}

@@ -1,3 +1,4 @@
+// components/ui/tag.tsx
 import colors from "@/styles/color";
 
 interface TagProps {
@@ -8,17 +9,16 @@ interface TagProps {
 
 export function Tag({ label, selected, onClick }: TagProps) {
   return (
-    <div
+    <button
       onClick={onClick}
-      className="px-3 py-1 rounded-full text-sm border cursor-pointer select-none transition-colors"
+      className={`px-4 py-1 rounded-full text-sm border font-medium transition-all duration-200`}
       style={{
-        backgroundColor: colors.white,
-        color: selected ? colors.primary.purple : colors.grey,
-        borderColor: selected ? colors.primary.purple : colors.grey,
-        fontWeight: selected ? "bold" : "normal",
+        backgroundColor: selected ? colors.primary.pink : colors.white,
+        color: selected ? colors.white : colors.black,
+        borderColor: selected ? colors.primary.pink : colors.lightgrey,
       }}
     >
       {label}
-    </div>
+    </button>
   );
 }
