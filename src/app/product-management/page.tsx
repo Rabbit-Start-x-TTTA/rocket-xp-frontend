@@ -99,39 +99,17 @@ export default function ProductManagementPage() {
             <table className="w-full">
               <thead className="bg-purple-300">
                 <tr>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                    Image
-                  </th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                    Name
-                  </th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                    Date
-                  </th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                    Type
-                  </th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                    Category
-                  </th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                    Price
-                  </th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                    Discount
-                  </th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                    Amount/Access Key
-                  </th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                    Ship
-                  </th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                    Status
-                  </th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-                    Option
-                  </th>
+                  <th className="table-header">Image</th>
+                  <th className="table-header">Name</th>
+                  <th className="table-header">Date</th>
+                  <th className="table-header">Type</th>
+                  <th className="table-header">Category</th>
+                  <th className="table-header">Price</th>
+                  <th className="table-header">Discount</th>
+                  <th className="table-header">Amount/Access Key</th>
+                  <th className="table-header">Ship</th>
+                  <th className="table-header">Status</th>
+                  <th className="table-header">Option</th>
                 </tr>
               </thead>
               <tbody className="bg-purple-200">
