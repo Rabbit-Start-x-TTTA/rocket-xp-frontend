@@ -123,30 +123,14 @@ export default function ProductManagementPage() {
                         <span className="text-xs text-gray-600">IMG</span>
                       </div>
                     </td>
-                    <td className="px-4 py-3 text-sm text-gray-700">
-                      {product.name}
-                    </td>
-                    <td className="px-4 py-3 text-sm text-gray-700">
-                      {product.date}
-                    </td>
-                    <td className="px-4 py-3 text-sm text-gray-700">
-                      {product.type}
-                    </td>
-                    <td className="px-4 py-3 text-sm text-gray-700">
-                      {product.category}
-                    </td>
-                    <td className="px-4 py-3 text-sm text-gray-700">
-                      ${product.price}
-                    </td>
-                    <td className="px-4 py-3 text-sm text-gray-700">
-                      {product.discount}%
-                    </td>
-                    <td className="px-4 py-3 text-sm text-gray-700">
-                      {product.amountAccessKey}
-                    </td>
-                    <td className="px-4 py-3 text-sm text-gray-700">
-                      {product.ship}
-                    </td>
+                    <td className="table-data">{product.name}</td>
+                    <td className="table-data">{product.date}</td>
+                    <td className="table-data">{product.type}</td>
+                    <td className="table-data">{product.category}</td>
+                    <td className="table-data">${product.price}</td>
+                    <td className="table-data">{product.discount}%</td>
+                    <td className="table-data">{product.amountAccessKey}</td>
+                    <td className="table-data">{product.ship}</td>
                     <td className="px-4 py-3">
                       <span
                         className={`px-2 py-1 rounded-full text-xs font-medium ${
