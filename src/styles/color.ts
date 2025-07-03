@@ -12,6 +12,7 @@ const colors = {
   white: "#FFFFFF",
   black: "#000000",
   lightgrey: "#D3D3D3",
+  lightpurple: "#F8F4FF"
 }
 
 export default colors

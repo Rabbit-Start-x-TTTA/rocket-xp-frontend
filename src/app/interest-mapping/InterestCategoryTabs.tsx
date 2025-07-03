@@ -21,7 +21,7 @@ export default function InterestCategoryTabs({
             onClick={() => onChange(tab)}
             className={`text-sm font-medium  px-3 py-1 transition-all duration-200 border-b-2`}
             style={{
-              color: isActive ? colors.primary.pink : colors.white,
+              color: isActive ? colors.primary.pink : colors.lightgrey,
               borderColor: isActive ? colors.primary.pink : "transparent",
             }}
           >

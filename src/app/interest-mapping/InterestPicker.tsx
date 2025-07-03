@@ -4,12 +4,18 @@ import Image from "next/image";
 import { useState } from "react";
 import InterestCategoryTabs from "./InterestCategoryTabs";
 import InterestTagList from "./InterestTagList";
+import colors from "@/styles/color";
 
 export default function InterestPicker() {
   const [activeTab, setActiveTab] = useState("TECHNOLOGY");
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-gradient-to-br from-[#fff] to-[#F8F4FF]">
+    <div
+      className="min-h-screen flex flex-col justify-between"
+      style={{
+        background: `linear-gradient(to bottom right, ${colors.white}, ${colors.lightpurple})`,
+      }}
+    >
       <div className="flex flex-col items-center justify-center flex-1 pt-24">
         <Image
           src="/logo.png"
@@ -21,11 +27,27 @@ export default function InterestPicker() {
         />
 
         {/* Card */}
-        <div className="w-full max-w-xl p-[2px] rounded-xl bg-gradient-to-r from-[#524389] to-[#D63AA2] shadow-xl">
+        <div
+          className="w-full max-w-xl p-[2px] rounded-xl shadow-xl"
+          style={{
+            background: `linear-gradient(to right, ${colors.primary.purple}, ${colors.primary.pink})`,
+          }}
+        >
+          {" "}
           <div className="rounded-xl bg-white overflow-hidden">
             {/* Header & Tab */}
-            <div className="bg-[#F8C8DC] px-6 pt-4 pb-0">
-              <h2 className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#524389] to-[#D63AA2] text-center mb-2">
+            <div
+              className="px-6 pt-4 pb-0"
+              style={{ backgroundColor: colors.lightpurple }}
+            >
+              {" "}
+              <h2
+                className="text-2xl font-extrabold text-transparent bg-clip-text text-center mb-2"
+                style={{
+                  backgroundImage: `linear-gradient(to right, ${colors.primary.purple}, ${colors.primary.pink})`,
+                }}
+              >
+                {" "}
                 Pick your interests
               </h2>
               <InterestCategoryTabs
@@ -44,13 +66,22 @@ export default function InterestPicker() {
       <div className="w-full flex justify-center mb-4">
         <button
           type="button"
-          className="px-8 py-3 rounded-full font-semibold bg-gradient-to-r from-[#524389] to-[#D63AA2] text-white shadow hover:from-[#D63AA2] hover:to-[#524389] transition-colors"
+          className="px-8 py-3 rounded-full font-semibold text-white shadow transition-colors"
+          style={{
+            backgroundImage: `linear-gradient(to right, ${colors.primary.purple}, ${colors.primary.pink})`,
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.backgroundImage = `linear-gradient(to right, ${colors.primary.pink}, ${colors.primary.purple})`;
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.backgroundImage = `linear-gradient(to right, ${colors.primary.purple}, ${colors.primary.pink})`;
+          }}
         >
           Next
         </button>
       </div>
       <div className="w-full flex justify-center pb-12">
-        <span className="text-base text-[#524389]">
+        <span className="text-base" style={{ color: colors.primary.purple }}>
           Corporate identity guideline
         </span>
       </div>
