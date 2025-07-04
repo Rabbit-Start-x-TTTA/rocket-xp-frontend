@@ -1,5 +1,6 @@
 import InterestsGrid from "@/components/interests/interestsGrid";
 import interests from "@/app/onboarding/interests/interests_data";
+import Link from "next/link";
 
 export default function InterestsPage() {
   return (
@@ -12,7 +13,11 @@ export default function InterestsPage() {
       <div className="flex items-center justify-center gap-2 mt-4">
         <input type="checkbox" name="accept" />
         <p>
-          <span>ข้าพเจ้ายอมรับ</span>&nbsp;ข้อกำหนดและเงื่อนไขการให้บริการ
+          <span className="opacity-70">ข้าพเจ้ายอมรับ</span>
+          &nbsp;
+          <Link href="#" className="hover:underline">
+            ข้อกำหนดและเงื่อนไขการให้บริการ
+          </Link>
         </p>
       </div>
       <div className="flex items-center justify-center">
