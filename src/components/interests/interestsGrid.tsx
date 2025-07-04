@@ -6,7 +6,7 @@ export default function InterestsGrid({
   interests: { id: number; name: string }[];
 }) {
   return (
-    <div className="grid grid-cols-2 gap-4">
+    <div className="flex flex-wrap gap-2 justify-center items-center">
       {interests.map((interest) => (
         <InterestTag key={interest.id} interest={interest.name} />
       ))}
