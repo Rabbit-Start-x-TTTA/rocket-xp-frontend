@@ -9,7 +9,7 @@ export default function InterestsGrid({
   interests: { id: number; name: string }[];
 }) {
   const [selected, setSelected] = useState<string[]>([]);
-  const maxSelected = 5;
+  const maxSelected: number = 5;
 
   function toggleInterest(interest: string) {
     if (selected.includes(interest)) {
