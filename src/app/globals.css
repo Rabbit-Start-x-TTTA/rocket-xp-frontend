@@ -46,12 +46,12 @@
 :root {
   --radius: 0.625rem;
   --background: #fff;
-  --foreground: #524389;
+  --foreground: black;
   --card: #fff;
   --card-foreground: #524389;
   --popover: #fff;
   --popover-foreground: #524389;
-  --primary: #524389;
+  --primary: black;
   --primary-foreground: #fff;
   --primary-alt: #d63aa2;
   --secondary: #c6639d;
@@ -62,7 +62,7 @@
   --accent: #ffb519;
   --accent-foreground: #fff;
   --destructive: #d63aa2;
-  --border: #382e5e;
+  --border: black;
   --input: #52438922;
   --ring: #d63aa2;
   --gradient: linear-gradient(90deg, #524389 0%, #d63aa2 100%);
