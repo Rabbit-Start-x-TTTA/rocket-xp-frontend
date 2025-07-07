@@ -1,56 +1,30 @@
-'use client'
 import Image from "next/image"
-import { Input } from "@/components/ui/input"
+import { LoginForm } from "@/components/LoginForm"
+import { signIn } from "@/lib/auth"
 import { Button } from "@/components/ui/button"
-import SigninButton from "@/components/SigninButton"
-import { useRouter } from "next/navigation"
-
 
 export default function LoginPage() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const formData = new FormData(e.currentTarget);
-    const email = formData.get("email");
-    const password = formData.get("password");
-
-    console.log("อีเมล:", email);
-    console.log("รหัสผ่าน:", password);
-  };
-  const router = useRouter();
   return (
     <div>
       <div className="flex flex-col items-center justify-center flex-1 pt-25">
         <Image src="/logo.png" alt="Rocket XP Logo" width={120} height={120} priority className="mb-6" />
-        <form onSubmit={handleSubmit} className="w-full max-w-sm bg-white rounded-xl p-8 flex flex-col gap-3">
-          <SigninButton />
-          <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
-            <span className="bg-card text-muted-foreground relative z-10 px-2">
-              หรือ
-            </span>
-          </div>
-          <div>
-            <Input id="email" name="email" type="email" autoComplete="email" className="w-full p-6 " placeholder="อีเมล" />
-          </div>
-          <div>
-            <Input id="password" name="password" type="password" autoComplete="current-password" className="w-full p-6 " placeholder="รหัสผ่าน" />
-          </div>
-          <a
-            href="#"
-            className="ml-auto text-sm underline-offset-4 hover:underline "
-          >
-            ลืมรหัสผ่าน
-          </a>
-          <Button type="submit"
-            className="w-full p-6 rounded-lg font-bold bg-gradient-to-r from-black to-black text-white text-lg shadow hover:from-input hover:to-input transition-colors my-3"
-            onClick={() => router.push("/products/purchase")}>เข้าสู่ระบบ</Button>
-          <a
-            href="#"
-            className=" flex flex-col items-center justify-center underline-offset-4 hover:underline"
-          >
-            ลงเบียน
-          </a>
+        <form
+          action={async () => {
+            "use server"
+            await signIn("google", {
+              redirectTo: "/profile"
+            })
+          }}
+        >
+          <Button type="submit" className="w-full" variant={"outline"}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24">
+              <path
+                d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"
+                fill="currentColor"
+              />
+            </svg>เข้าสู่ระบบด้วย Google</Button>
         </form>
+        <LoginForm />
       </div>
     </div>
   )
