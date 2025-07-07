@@ -16,8 +16,8 @@ export const LoginForm = () => {
     };
     return (
         <form onSubmit={handleSubmit} className="w-full max-w-sm bg-white rounded-xl p-8 flex flex-col gap-3">
-            <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
-                <span className="bg-card text-muted-foreground relative z-10 px-2">
+            <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t mb-3">
+                <span className="bg-card text-muted-foreground relative z-10 px-2 ">
                     หรือ
                 </span>
             </div>
