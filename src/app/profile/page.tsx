@@ -1,35 +1,23 @@
-import { auth } from "@/lib/auth";
 import Image from "next/image";
-import Link from "next/link";
-import { redirect } from "next/navigation";
 import { FaRocket, FaMusic, FaPaintBrush, FaBook } from "react-icons/fa";
 
-export default async function ProfilePage() {
-  const session = await auth();
-  if (!session?.user) {
-    redirect("/login");
-  }
+export default function ProfilePage() {
   return (
     <div className="min-h-screen flex flex-col justify-between bg-gradient-to-br from-[#fff] to-[#F8F4FF] font-prompt">
       <div className="flex flex-col items-center justify-center flex-1 pt-8 pb-4 px-2">
         {/* Profile Header */}
         <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl p-6 flex flex-col items-center mb-6">
           <div className="flex flex-col items-center w-full mb-4">
-            <Image src={session.user.image!} alt="Profile Logo" width={80} height={80} className="rounded-full border-4 border-[#D63AA2] bg-white shadow" />
-            <div className="text-2xl font-bold text-[#524389] mt-3">{session.user.name}</div>
-            <div className="text-base text-[#C6639D]">{session.user.email}</div>
+            <Image src="/logo.png" alt="Profile Logo" width={80} height={80} className="rounded-full border-4 border-[#D63AA2] bg-white shadow" />
+            <div className="text-2xl font-bold text-[#524389] mt-3">Jane Doe</div>
+            <div className="text-base text-[#C6639D]">@janedoe</div>
             <div className="flex gap-2 mt-2">
               <span className="bg-[#FFB519] text-[#382E5E] text-xs font-semibold px-3 py-1 rounded-full shadow">1,250 XP</span>
               <span className="bg-gradient-to-r from-[#524389] to-[#D63AA2] text-white text-xs font-semibold px-3 py-1 rounded-full shadow">Level 7</span>
             </div>
-            <div className="flex space-x-4">
-              <button className="mt-3 text-[#524389] hover:text-[#D63AA2] text-base flex items-center gap-1 px-3 py-1 rounded-lg border border-[#C6639D] bg-[#F8F4FF] transition-colors">
-                <span role="img" aria-label="edit">✏️</span> Edit
-              </button>
-              <button className="mt-3 text-[#524389] hover:text-[#D63AA2] text-base flex items-center gap-1 px-3 py-1 rounded-lg border border-[#C6639D] bg-[#F8F4FF] transition-colors">
-                <Link href={"/api/auth/signout"}><span role="img" aria-label="signout">👋</span> Logout</Link>
-              </button>
-            </div>
+            <button className="mt-3 text-[#524389] hover:text-[#D63AA2] text-base flex items-center gap-1 px-3 py-1 rounded-lg border border-[#C6639D] bg-[#F8F4FF] transition-colors">
+              <span role="img" aria-label="edit">✏️</span> Edit
+            </button>
           </div>
           {/* Interests as badges */}
           <div className="w-full flex flex-wrap gap-2 justify-center mt-2 mb-1">

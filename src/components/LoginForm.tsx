@@ -36,7 +36,7 @@ export const LoginForm = () => {
             <Button type="submit"
                 className="w-full p-6 rounded-lg font-bold bg-gradient-to-r from-black to-black text-white text-lg shadow hover:from-input hover:to-input transition-colors my-3">เข้าสู่ระบบ</Button>
             <a
-                href="#"
+                href="/register"
                 className=" flex flex-col items-center justify-center underline-offset-4 hover:underline"
             >
                 ลงเบียน
