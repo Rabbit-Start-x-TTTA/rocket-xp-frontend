@@ -1,15 +1,24 @@
 "use client";
 
 import React, { useState, FormEvent } from "react";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { signIn } from "next-auth/react";
+import { signIn, signOut } from "next-auth/react";
+import { useEffect } from "react";
+
 
 const Register: React.FC = () => {
   const router = useRouter();
+
+  useEffect(() => {
+    async function doSignOut() {
+      await signOut({ redirect: false });
+    }
+    doSignOut();
+  }, []);
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -62,7 +71,7 @@ const Register: React.FC = () => {
       if (res.ok) {
         router.push("/register/create");
       } else {
-        console.log("ไม่สามารถสมัครสมาชิกได้");
+        console.log(errors);
       }
     } catch (error) {
       console.error("Error:", error);
@@ -74,22 +83,6 @@ const Register: React.FC = () => {
       className="min-h-screen flex flex-col justify-center items-center px-4 bg-gray-200"
       style={{ backgroundColor: "#F8F4FF" }}
     >
-      {/* <div className="flex flex-col items-center justify-center flex-1 pt-5">
-        <Image
-          src="/logo.png"
-          alt="Rocket XP Logo"
-          width={100}
-          height={100}
-          priority
-          className="mb-4"
-        />
-        <h1 className="text-4xl font-extrabold gradient-text mb-2 tracking-tight">
-          ROCKET XP
-        </h1>
-        <div className="text-base font-semibold text-black mb-4 tracking-wide">
-          RABBIT START CO., LTD.
-        </div>
-      </div> */}
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-md bg-white rounded-xl shadow-lg p-4 flex flex-col gap-6"
@@ -100,7 +93,12 @@ const Register: React.FC = () => {
 
         {/* Sign Up with Google */}
         <Button
-          onClick={() => signIn("google", { callbackUrl: "/register/create" })}
+          onClick={() =>
+            signIn("google", {
+              callbackUrl: "/register/create",
+              prompt: "select_account",
+            })
+          }
           className="mx-auto flex items-center gap-2 px-4 py-1 rounded-full font-semibold bg-gradient-to-r from-[#524389] to-[#D63AA2] text-white text-sm shadow hover:from-[#D63AA2] hover:to-[#524389] transition-colors"
           type="button"
           style={{ minWidth: 140 }}
