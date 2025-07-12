@@ -57,7 +57,7 @@ const Register: React.FC = () => {
     if (!validateForm()) return;
 
     try {
-      const res = await fetch("http://localhost:3000/api/register", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -67,6 +67,7 @@ const Register: React.FC = () => {
           password,
         }),
       });
+      
 
       if (res.ok) {
         router.push("/register/create");
@@ -99,7 +100,7 @@ const Register: React.FC = () => {
               prompt: "select_account",
             })
           }
-          className="mx-auto flex items-center gap-2 px-4 py-1 rounded-full font-semibold bg-gradient-to-r from-[#524389] to-[#D63AA2] text-white text-sm shadow hover:from-[#D63AA2] hover:to-[#524389] transition-colors"
+          className="mx-auto flex items-center gap-2 px-4 py-1 rounded-full font-semibold bg-gradient-to-r from-purple to-pink text-white text-sm shadow hover:from-pink hover:to-purple transition-colors"
           type="button"
           style={{ minWidth: 140 }}
         >
@@ -187,7 +188,7 @@ const Register: React.FC = () => {
         {/* Create Account */}
         <Button
           type="submit"
-          className="w-1/2 mx-auto mt-4 py-2 rounded-full font-semibold bg-gradient-to-r from-[#524389] to-[#D63AA2] text-white text-base shadow hover:from-[#D63AA2] hover:to-[#524389] transition-colors"
+          className="w-1/2 mx-auto mt-4 py-2 rounded-full font-semibold bg-gradient-to-r from-purple to-pink text-white text-base shadow hover:from-pink hover:to-[purple transition-colors"
         >
           Create Account
         </Button>
