@@ -99,7 +99,6 @@ export default function ForgotPassword() {
         </label>
         <input
           id="email"
-          type="email"
           placeholder="Your email"
           value={email}
           onChange={(e) => {
