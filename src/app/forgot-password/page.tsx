@@ -37,9 +37,10 @@ export default function ForgotPassword() {
           errorData.message || "Something went wrong. Please try again."
         );
       }
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    } catch (err) {
-      setError("Network error. Please check your connection and try again.");
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message || "Something went wrong.");
+      }
     } finally {
       setIsLoading(false);
     }

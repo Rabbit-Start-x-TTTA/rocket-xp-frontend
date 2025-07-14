@@ -106,9 +106,9 @@ export default function ResetPassword() {
         <button
           type="submit"
           disabled={isLoading}
-          className={`w-full p-2 mt-2 text-white rounded  cursor-pointer ${
+          className={`w-full p-2 mt-2 text-white rounded cursor-pointer border-1 ${
             isLoading ? "bg-gray-400" : "bg-[var(--primary)]"
-          }`}
+          } hover:text-black hover: hover:bg-white  transition duration-300`}
         >
           {isLoading ? "Resetting..." : "Reset Password"}
         </button>
