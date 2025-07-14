@@ -23,20 +23,18 @@ export default function ForgotPassword() {
     }
 
     try {
-      const response = await fetch("/api/forgot-password", {
+      const response = await fetch("/auth/forgot", {
         method: "POST",
         body: JSON.stringify({ email }),
         headers: { "Content-Type": "application/json" },
       });
 
-      if (response.ok) {
-        setIsSuccess(true);
-      } else {
-        const errorData = await response.json();
-        setError(
-          errorData.message || "Something went wrong. Please try again."
-        );
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.message || "Something went wrong.");
       }
+
+      setIsSuccess(true);
     } catch (err: unknown) {
       if (err instanceof Error) {
         setError(err.message || "Something went wrong.");
@@ -104,7 +102,10 @@ export default function ForgotPassword() {
           type="email"
           placeholder="Your email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => {
+            setEmail(e.target.value);
+            setError("");
+          }}
           disabled={isLoading}
           className="w-full p-2 mt-2 mb-4 border rounded disabled:opacity-50"
         />

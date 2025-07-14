@@ -40,7 +40,7 @@ export default function ResetPassword() {
     }
 
     try {
-      const response = await fetch("/api/reset-password", {
+      const response = await fetch("/auth/reset", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -108,7 +108,7 @@ export default function ResetPassword() {
           disabled={isLoading}
           className={`w-full p-2 mt-2 text-white rounded cursor-pointer border-1 ${
             isLoading ? "bg-gray-400" : "bg-[var(--primary)]"
-          } hover:text-black hover: hover:bg-white  transition duration-300`}
+          } hover:text-black hover:bg-white transition duration-300`}
         >
           {isLoading ? "Resetting..." : "Reset Password"}
         </button>
