@@ -100,7 +100,7 @@ const Register: React.FC = () => {
               prompt: "select_account",
             })
           }
-          className="mx-auto flex items-center gap-2 px-4 py-1 rounded-full font-semibold bg-gradient-to-r from-purple to-pink text-white text-sm shadow hover:from-pink hover:to-purple transition-colors"
+          className="mx-auto flex items-center gap-2 px-4 py-1 rounded-full font-semibold bg-gradient-to-r from-purple to-pink text-black text-sm shadow hover:from-pink hover:to-purple transition-colors"
           type="button"
           style={{ minWidth: 140 }}
         >
@@ -188,7 +188,7 @@ const Register: React.FC = () => {
         {/* Create Account */}
         <Button
           type="submit"
-          className="w-1/2 mx-auto mt-4 py-2 rounded-full font-semibold bg-gradient-to-r from-purple to-pink text-white text-base shadow hover:from-pink hover:to-[purple transition-colors"
+          className="w-1/2 mx-auto mt-4 py-2 rounded-full font-semibold bg-gradient-to-r from-purple to-pink text-black text-base shadow hover:from-pink hover:to-[purple transition-colors"
         >
           Create Account
         </Button>
